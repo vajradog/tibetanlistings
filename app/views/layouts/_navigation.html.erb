@@ -1,0 +1,24 @@
+<div class="container">
+
+<% if logged_in? %>
+<header class="clearfix">
+	<%= link_to 'New Listing', new_listing_path%> | 
+	<%= link_to 'Log out', logout_path %>
+</header>
+<% end %>
+<!--<header class="clearfix">
+	<#%= image_tag "logo.png", class: "logo"%>
+	<nav>
+		<a href="http://youngtibet.com" data-info="Blueprint"><span>Young Tibet </span></a>
+	</nav> 
+</header>	-->
+<div id="tabs" class="tabs">
+	<nav>
+		<ul>
+			<li><a href="#section-1" class="icon-office"><span>NGOs</span></a></li>
+			<li><a href="#section-2" class="icon-restaurant"><span>Restaurants</span></a></li>
+			<li><a href="#section-3" class="icon-shops"><span>Shops</span></a></li>
+			<li><a href="#section-4" class="icon-globe"><span>Intepreters</span></a></li>
+			<li><a href="#section-5" class="icon-about"><span>About</span></a></li>
+		</ul>
+	</nav>

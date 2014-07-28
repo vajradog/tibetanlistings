@@ -1,0 +1,33 @@
+<div class="mediabox">
+	<% if list.image? %>
+		<img src="<%= list.image %>" alt="offices" />
+	<% else %>
+		<img src="https://dl.dropbox.com/s/60cgildnnrbgop7/default.jpg" alt="offices" />
+	<% end %>
+	
+	<% if list.website? %>
+		<h3><%= link_to ("#{list.name}" '*'), list.website, target: "_blank" %></h3>
+	<% else %>
+		<h3><%= list.name %></h3>
+	<% end %>
+
+	<% if logged_in? %>
+	<strong><%= link_to 'Edit', edit_listing_path(list)%> | <%= link_to 'Delete', list, confirm: 'Are you sure?', method: :delete%></strong>
+	<% end %>
+	
+	<p>
+		<% if list.address? %>
+			<%= list.address %>
+		<% else %>
+			<small><i>Address not available</i></small>
+		<% end %> <br>
+		
+		<%= list.city %><br>
+	
+	<% if list.phone? %>
+		<%= list.phone %>
+	<% else %>
+		<small><i>Phone not available</i></small>
+	<% end %>
+	</p>	
+</div>

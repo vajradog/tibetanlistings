@@ -1,0 +1,34 @@
+<div class="content">
+	<section id="section-1">
+		<% Category.first.listings.all.each do |list| %>
+			<%= render 'listing', list: list%>
+		<% end %>
+	</section>
+
+	<section id="section-2">
+		<% Category.find(2).listings.all.each do |list| %>
+			<%= render 'listing', list: list%>
+		<% end %>
+	</section>
+
+	<section id="section-3">
+		<% Category.find(3).listings.all.each do |list| %>
+			<%= render 'listing', list: list%>
+		<% end %>
+	</section>
+
+	<section id="section-4">
+		<% Category.find(4).listings.all.each do |list| %>
+			<%= render 'listing', list: list%>
+		<% end %>
+	</section>
+
+	<section id="section-5">
+		<%= render 'about'%>
+	</section>
+</div>
+
+
+
+
+

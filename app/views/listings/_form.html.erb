@@ -1,0 +1,25 @@
+<%= form_for @listing do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %><br>
+<%= form.label :address %>
+<%= form.text_field :address %><br>
+<%= form.label :city %>
+<%= form.text_field :city %><br>
+<%= form.label :phone %>
+<%= form.text_field :phone %><br>
+<%= form.label :website %>
+<%= form.text_field :website %><br>
+<%= form.label :image %>
+<%= form.text_field :image %><br>
+  <br>
+
+ <%= form.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+    <%= cb.label(class: "checkbox inline") {cb.check_box(class: "checkbox") + cb.text}%>
+  <% end %>
+<!--
+<#%= form.collection_check_boxes :category_ids, Category.all, :id, :name %>
+ 
+ second line is just styling, the first line works fine. Check http://apidock.com/rails/v4.0.2/ActionView/Helpers/FormOptionsHelper/collection_check_boxes -->
+    <br>
+<%= form.submit(@listing.new_record? ? "create listing" : "Update listing" )%>
+  <% end %>
